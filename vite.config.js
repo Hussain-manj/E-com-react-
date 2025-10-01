@@ -5,5 +5,16 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   base: '/',        // ensure assets resolve correctly
-  build: { outDir: 'dist' } 
+  build: { 
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom'],
+          firebase: ['firebase/app', 'firebase/auth', 'firebase/firestore'],
+          ui: ['@material-tailwind/react', 'lucide-react']
+        }
+      }
+    }
+  } 
 })
