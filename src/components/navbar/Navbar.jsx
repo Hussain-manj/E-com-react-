@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import SearchBar from "../searchBar/SearchBar";
+import SearchBar from "../searchbar/SearchBar";
 import { useSelector } from "react-redux";
 
 const Navbar = () => {
